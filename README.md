@@ -1,2 +1,2 @@
 # marchis
-marchis is a modular install script for arch linux to make a reproducable install experience for arch linux.
+Marchis is a install script for Arch linux with a portable configuration file.
