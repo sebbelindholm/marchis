@@ -10,40 +10,52 @@
 
 # This file contains everything related to the filesystem.
 
-echo "[INFO] Setting up filesystem. "
+#Colors
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+WHITE='\033[0;37m'
+BLUE='\033[0;34m'
+RESET='\033[0m'
+
+echo -e "$GREEN[INFO]$RESET Setting up filesystem. "
+
+root_drive=$1
+boot_part_size=$2
+swap=$3
+swapsize=$4
 
 # Checking if root drive is set.
-if [ -z "$1" ]
+if [ -z "$root_drive" ]
 then
-    echo "[INPUT] What drive to install arch on: "
+    echo -e -n "$BLUE[INPUT]$RESET What drive to install arch on: "
     read root_drive
 else
-    echo "[INFO] Setting up arch on $1. "
+    echo -e "$GREEN[INFO]$RESET Setting up arch on $root_drive. "
 fi
 
 # Checking if boot partition size is set.
-if  [ -z "$2" ]
+if  [ -z "$boot_part_size" ]
 then
-    echo "[INPUT] How big do you want the boot partition: "
+    echo -e -n "$BLUE[INPUT]$RESET How big do you want the boot partition: "
     read boot_part_size
 else
-    echo "[INFO] Boot partition size is $2. "
+    echo "$GREEN[INFO]$RESET Boot partition size is $boot_part_size. "
 fi
 
 # Checking swap.
-if [ -z "$3" ]
+if [ -z "$swap" ]
 then
-    echo "[INPUT] Do you want a swap partition: "
+    echo -e -n "$BLUE[INPUT]$RESET Do you want a swap partition: "
     read swap
 else
-    if [ "$3" = true && -z "$4"]
+    if [ "$swap" = true && -z "$swapsize"]
     then
-        echo "[INPUT] What size do you want the swap(in GB): "
+        echo -e -n "$BLUE[INPUT]$RESET What size do you want the swap(in GB): "
         read swapsize
     else
-        if ["$3" = true && -n "$4"]
+        if ["$swap" = true && -n "$swapsize"]
         then
-            echo "[INFO] Using swap. "
+            echo "$GREEN[INFO]$RESET Using swap. "
         fi
     fi
 fi

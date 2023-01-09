@@ -19,6 +19,6 @@ source $config/config.sh
 
 # Display splashscreen.
 echo -e $splashscreen
-
+read -p "Press any key to continue!"
 # Starts with filesystem setup.
 source $scripts/filesystem.sh $root_drive $boot_part_size $swap $swapsize

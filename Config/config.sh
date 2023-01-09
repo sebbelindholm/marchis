@@ -18,6 +18,10 @@ hostname=
 # This field cant be empty, will be prompted if it is.
 root_drive=
 
+# Other drives to mount. Format is drives=DRIVE1 DRIVE2 DRIVE3 etc.
+# Can be left empty.
+other_drives=
+
 # Set boot partitions size.
 # Defaults to 550MB.
 boot_part_size=
