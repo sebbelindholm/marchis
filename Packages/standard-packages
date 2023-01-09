@@ -1,0 +1,17 @@
+# Modular Arch Install Script (marchis)
+# --------------------------------
+# author    : Sebastian Lindholm Gustafsson
+#             https://github.com/sebbelindholm
+# project   : https://github.com/sebbelindholm/marchis
+#
+# reference : https://wiki.archlinux.org/index.php/Installation_guide
+
+# This file contains the fundamental packages to be able to boot standard Arch Linux.
+# This file contains packages such as kernel och devel.
+# Also some fundamental packages needed to use linux such as git.
+
+base
+base-devel
+linux
+linux-firmware
+git
